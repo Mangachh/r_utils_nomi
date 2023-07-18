@@ -3,9 +3,10 @@
 
 library(readxl)
 library(writexl)
-source("scripts/cbs_linear_utils.R")
+source("cbs_linear_utils.R")
 
-FILE_TO_READ <- "data/raw/pits_txt.txt"
+# TODO: MODIFY
+FILE_TO_READ <- "data/raw/FILE_NAME.extension"
 FOLDER_TO_SAVE <- "outputs/linear_regression/"
 
 #Inicio de las variables de interés
@@ -13,7 +14,7 @@ dep_var <- "Num"
 
 
 #parte de la fórmula de lm con las variables indepes tiene que empezar ~ VIs
-indep_vars <- "~ Edat +Sexe"
+indep_vars <- "~ FORMULA"
 
 
 #Abre el archivo y crea un dataframe

@@ -1,12 +1,9 @@
-source("scripts/graphs.R")
-source("scripts/utils.R")
+source("scripts/cbs_graphs_utils.R")
+source("scripts/cbs_utils.R")
 
-library(tidyverse)
-library(hrbrthemes)
-library(viridis)
-
-FILE_TO_LOAD <- "data/raw/RH_depth_80.txt"
-FOLDER_TO_SAVE <- "C:/nomir/pits_project/outputs/imgs/"
+#TODO: Modify
+FILE_TO_LOAD <- "data/raw/FILE_NAME.extension"
+FOLDER_TO_SAVE <- "outputs/imgs/"
 
 print("hello")
 # load dataframe
@@ -17,15 +14,13 @@ COLUMN_INIT <- "MAXDPF"
 final_cols <- get_column_name_by_contains(my_data, COLUMN_INIT)
 print(final_cols)
 
-# get the graphs
-group <- "Sexe"
-x <- "Sexe"
-# TODO: ver qué se puede hacer aquí...
+# vars names
+group <- "put_name_here"
+x <- "put_name_here"
 
 # Crear una lista con lo que queramos añadir al gráfico.
 geom <- list(
-    geom_boxplot(),
-    geom_boxplot(aes(colour = Sexe), colour= c("red","blue")),
+    geom_boxplot(aes(colour = GROUP_NAME), colour = c("red", "blue"), fill = c("#dc7d7d75", "#9090e5")),
     labs(
         title = "Amo a ver qué pasa",
         subtitle = "Cobos",
@@ -35,20 +30,6 @@ geom <- list(
     ),
     theme_classic()
 )
-
-# a mano para comprobar que son iguales
-p <- ggplot(my_data, aes(group = Sexe, x = Sexe, y = MAXDPF1)) +
-    geom_boxplot(aes(colour = Sexe)) +
-    labs(
-        title = "Amo a ver qué pasa",
-        subtitle = "Cobos",
-        caption = "Source: data-nomi",
-        x = "La cosa esa",
-        y = "La otra cosa"
-    )+
-    theme_classic()
-print(p)
-
 
 save_graphs_from_dataframe(
     data = my_data,
