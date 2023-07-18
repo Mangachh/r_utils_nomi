@@ -1,0 +1,11 @@
+# ide & r folders
+.Rproj.user/
+.vscode
+.Rhistory
+.lintr
+pits_project.Rproj
+
+# project folders
+data/
+outputs/
+rars/
