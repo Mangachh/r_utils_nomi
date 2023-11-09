@@ -3,7 +3,7 @@
 
 library(readxl)
 library(writexl)
-source("cbs_linear_utils.R")
+source("scripts/cbs_linear_utils.R")
 
 # TODO: MODIFY
 FILE_TO_READ <- "data/raw/FILE_NAME.extension"
